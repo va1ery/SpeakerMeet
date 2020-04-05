@@ -1,4 +1,5 @@
 using System;
+using Linq;
 using Xunit;
 using SpeakerMeet.API.Controllers;
 using Microsoft.AspNetCore.Mvc;
@@ -49,7 +50,7 @@ public void ItReturnsCollectionOfSpeakers()
   // Assert
   Assert.NotNull(result);
   Assert.NotNull(result.Value); 
-//  Assert.IsType<List<Speaker>>(result.Value);
+  Assert.IsType<List<Speaker>>(result.Value);
 }
 }
 } 
