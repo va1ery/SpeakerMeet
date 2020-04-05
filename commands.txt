@@ -39,14 +39,18 @@ The type or namespace name 'SpeakerController' could not be found
 [/home/leo/Documents/SpeakerMeet/SpeakerMeet.API.Tests/SpeakerMeet.API.Tests.csproj]
 
 15. In Project SpeakerMeet.API create class file by name SpeakerController.cs with following code:
-        namespace SpeakerMeet.API.Controllers
-        {
-            [ApiController]
-            [Route("[controller]")]
-            public class SpeakerController : ControllerBase
-            {
-            }
-        }
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+
+namespace SpeakerMeet.API.Controllers
+{
+    [Route("api/[controller]")]
+    public class SpeakerController : Controller
+    {
+    }
+}    
 16. run  test again and notice the output:
 Test run for /home/leo/Documents/SpeakerMeet/SpeakerMeet.API.Tests/bin/Debug/netcoreapp3.1/SpeakerMeet.API.Tests.dll(.NETCoreApp,Version=v3.1)
 Microsoft (R) Test Execution Command Line Tool Version 16.5.0
@@ -61,7 +65,7 @@ Total tests: 1
      Passed: 1
  Total time: 4.3933 Seconds
 
- 17. put all the solution on GitHub:
+17. put all the solution on GitHub:
  cd ..
  dir SpeakerMeet.sln
  Output: SpeakerMeet.sln
@@ -72,5 +76,61 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/<UserName>/SpeakerMeet.git
 git push -u origin master
-                
 
+18. edit SpeakerControllerSearchTests.cs file by adding following code:
+        [Fact]
+        public void ItHasSearch()
+        {
+        // Arrange
+        var controller = new SpeakerController();
+
+        // Act
+        controller.Search("Jos");
+        }
+19. run dotnet test and see:
+SpeakerControllerSearchTests.cs(22,20): error CS1061: 'SpeakerController' does not 
+contain a definition for 'Search' and no accessible extension method 'Search' 
+accepting a first argument of type 'SpeakerController' could be found 
+(are you missing a using directive or an assembly reference?) 
+[/home/leo/Documents/SpeakerMeet/SpeakerMeet.API.Tests/SpeakerMeet.API.Tests.csproj]
+                
+20. implement "Search" method in SpeakerController class
+  public class SpeakerController : Controller
+    {
+        [HttpGet]
+        [Route("search")]
+        public IActionResult Search(string searchString)
+        {
+            var hardCodedSpeakers = new List<Speaker>
+            {
+                new Speaker {Name = "Josh"},
+                new Speaker {Name = "Joshua"},
+                new Speaker {Name = "Joseph"},
+                new Speaker {Name = "Bill"},
+            };
+
+            var speakers = hardCodedSpeakers
+                .Where(x => x.Name.StartsWith(searchString, StringComparison.OrdinalIgnoreCase)).ToList();
+
+            return Ok(speakers);
+        }
+    }
+
+21. Again run test and see output:
+Controllers/SpeakerController.cs(17,46): error CS0246: 
+The type or namespace name 'Speaker' could not be found 
+(are you missing a using directive or an assembly reference?) 
+...
+22. Of course we forgot to define Speaker class. Lets add it after the end of SpeakerController class:
+    ...
+    public class Speaker
+    {
+        public string Name { get; set; }
+    }
+     
+22. Test and see:
+...
+Test Run Successful.
+Total tests: 2
+     Passed: 2
+ Total time: 3.5875 Seconds
