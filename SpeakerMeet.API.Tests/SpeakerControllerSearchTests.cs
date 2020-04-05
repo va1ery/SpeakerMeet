@@ -26,20 +26,6 @@ public void GivenExactMatchThenOneSpeakerInCollection()
   var speakers = ((IEnumerable<Speaker>)result.Value).ToList();
   Assert.Equal(1, speakers.Count);
 }
-
-[Fact(Skip = "No longer needed")]
-public void ItReturnsCollectionOfSpeakers()
-{
-  // Arrange
-  var controller = new SpeakerController();
-
-  // Act
-  var result = controller.Search("Jos") as OkObjectResult;
-
-  // Assert
-  Assert.NotNull(result);
-  Assert.NotNull(result.Value); 
-  Assert.IsType<List<Speaker>>(result.Value);
 }
 }
 } 
