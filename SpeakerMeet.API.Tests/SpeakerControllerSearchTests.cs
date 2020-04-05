@@ -26,6 +26,4 @@ public void GivenExactMatchThenOneSpeakerInCollection()
   var speakers = ((IEnumerable<Speaker>)result.Value).ToList();
   Assert.Equal(1, speakers.Count);
 }
-}
-}
-} 
+}} 
