@@ -1,5 +1,5 @@
 using System;
-using Linq;
+using System.Collections.Generic;
 using Xunit;
 using SpeakerMeet.API.Controllers;
 using Microsoft.AspNetCore.Mvc;
