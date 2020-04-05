@@ -15,7 +15,7 @@ public SpeakerControllerSearchTests()
 {
   _controller = new SpeakerController();
 }       
-[Fact]
+[Fact(Skip)]
 public void GivenExactMatchThenOneSpeakerInCollection()
 {
   // Arrange
@@ -25,5 +25,17 @@ public void GivenExactMatchThenOneSpeakerInCollection()
   // Assert
   var speakers = ((IEnumerable<Speaker>)result.Value).ToList();
   Assert.Equal(1, speakers.Count);
+} 
+[Fact]
+public void GivenExactMatchThenOneSpeakerInCollection()
+{
+  // Arrange
+  // Act
+  var result = _controller.Search("Joshua") as OkObjectResult;
+
+  // Assert  
+  var speakers = ((IEnumerable<Speaker>)result.Value).ToList();
+  Assert.Equal(1, speakers.Count);
+  Assert.Equal("Joshua", speakers[0].Name);
 }
 }} 
