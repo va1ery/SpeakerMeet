@@ -134,3 +134,38 @@ Test Run Successful.
 Total tests: 2
      Passed: 2
  Total time: 3.5875 Seconds
+
+ 23. Let's confirm that the Search action returns result:
+ [Fact]
+public void ItReturnsOkObjectResult()
+{
+  // Arrange
+  var controller = new SpeakerController();
+
+  // Act
+  var result = controller.Search("Jos");
+
+  // Assert
+  Assert.NotNull(result);
+}
+24. Test and get:
+Test run for /home/leo/Documents/SpeakerMeet/SpeakerMeet.API.Tests/bin/Debug/netcoreapp3.1/SpeakerMeet.API.Tests.dll(.NETCoreApp,Version=v3.1)
+Microsoft (R) Test Execution Command Line Tool Version 16.5.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.53]     SpeakerMeet.API.Tests.SpeakerControllerSearchTests.ItExists [SKIP]
+[xUnit.net 00:00:01.54]     SpeakerMeet.API.Tests.SpeakerControllerSearchTests.ItHasSearch [SKIP]
+  ! SpeakerMeet.API.Tests.SpeakerControllerSearchTests.ItExists [1ms]
+  ! SpeakerMeet.API.Tests.SpeakerControllerSearchTests.ItHasSearch [1ms]
+
+Test Run Successful.
+Total tests: 3
+     Passed: 1
+    Skipped: 2
+ Total time: 3.1879 Seconds
+
+25. 
+

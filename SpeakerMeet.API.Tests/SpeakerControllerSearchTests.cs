@@ -6,13 +6,13 @@ namespace SpeakerMeet.API.Tests
 {
     public class SpeakerControllerSearchTests
     {
-        [Fact/*(Skip = "No longer needed")*/]
+        [Fact(Skip = "No longer needed")]
         public void ItExists()
         {
         var controller = new SpeakerController();
         }
  
-         [Fact]
+         [Fact(Skip = "No longer needed")]
         public void ItHasSearch()
         {
         // Arrange
@@ -21,5 +21,18 @@ namespace SpeakerMeet.API.Tests
         // Act
         controller.Search("Jos");
         }  
+        [Fact]
+        public void ItReturnsOkObjectResult()
+        {
+        // Arrange
+        var controller = new SpeakerController();
+
+        // Act
+        var result = controller.Search("Jos");
+
+        // Assert
+        Assert.NotNull(result);
+//        Assert.IsType<OkObjectResult>(result);
+        }
     }
 }
