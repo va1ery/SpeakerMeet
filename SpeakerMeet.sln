@@ -1,8 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 15.0.26124.0
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeakerMeet.API", "SpeakerMeet.API\SpeakerMeet.API.csproj", "{3F910E83-F341-450E-8922-A3F4FDEED3C0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeakerMeet.API.Tests", "SpeakerMeet.API.Tests\SpeakerMeet.API.Tests.csproj", "{9E63A39D-1D07-44A8-8A84-4C1AF58391CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,7 +16,36 @@ Global
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F910E83-F341-450E-8922-A3F4FDEED3C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F910E83-F341-450E-8922-A3F4FDEED3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F910E83-F341-450E-8922-A3F4FDEED3C0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3F910E83-F341-450E-8922-A3F4FDEED3C0}.Debug|x64.Build.0 = Debug|Any CPU
+		{3F910E83-F341-450E-8922-A3F4FDEED3C0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3F910E83-F341-450E-8922-A3F4FDEED3C0}.Debug|x86.Build.0 = Debug|Any CPU
+		{3F910E83-F341-450E-8922-A3F4FDEED3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F910E83-F341-450E-8922-A3F4FDEED3C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F910E83-F341-450E-8922-A3F4FDEED3C0}.Release|x64.ActiveCfg = Release|Any CPU
+		{3F910E83-F341-450E-8922-A3F4FDEED3C0}.Release|x64.Build.0 = Release|Any CPU
+		{3F910E83-F341-450E-8922-A3F4FDEED3C0}.Release|x86.ActiveCfg = Release|Any CPU
+		{3F910E83-F341-450E-8922-A3F4FDEED3C0}.Release|x86.Build.0 = Release|Any CPU
+		{9E63A39D-1D07-44A8-8A84-4C1AF58391CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E63A39D-1D07-44A8-8A84-4C1AF58391CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E63A39D-1D07-44A8-8A84-4C1AF58391CD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9E63A39D-1D07-44A8-8A84-4C1AF58391CD}.Debug|x64.Build.0 = Debug|Any CPU
+		{9E63A39D-1D07-44A8-8A84-4C1AF58391CD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9E63A39D-1D07-44A8-8A84-4C1AF58391CD}.Debug|x86.Build.0 = Debug|Any CPU
+		{9E63A39D-1D07-44A8-8A84-4C1AF58391CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E63A39D-1D07-44A8-8A84-4C1AF58391CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E63A39D-1D07-44A8-8A84-4C1AF58391CD}.Release|x64.ActiveCfg = Release|Any CPU
+		{9E63A39D-1D07-44A8-8A84-4C1AF58391CD}.Release|x64.Build.0 = Release|Any CPU
+		{9E63A39D-1D07-44A8-8A84-4C1AF58391CD}.Release|x86.ActiveCfg = Release|Any CPU
+		{9E63A39D-1D07-44A8-8A84-4C1AF58391CD}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7AF54858-9E7F-46BC-938E-FE1CFF37D88C}
 	EndGlobalSection
 EndGlobal
