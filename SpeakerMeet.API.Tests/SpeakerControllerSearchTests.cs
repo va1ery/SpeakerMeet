@@ -36,7 +36,7 @@ namespace SpeakerMeet.API.Tests
         Assert.IsType<OkObjectResult>(result);
         }
          
-    }
+    
 [Fact]
 public void ItReturnsCollectionOfSpeakers()
 {
@@ -52,3 +52,4 @@ public void ItReturnsCollectionOfSpeakers()
   Assert.IsType<List<Speaker>>(result.Value);
 }
 }
+} 
