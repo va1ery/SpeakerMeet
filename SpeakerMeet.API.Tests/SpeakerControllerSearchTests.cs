@@ -35,5 +35,20 @@ namespace SpeakerMeet.API.Tests
         Assert.NotNull(result);
         Assert.IsType<OkObjectResult>(result);
         }
+         
     }
+[Fact]
+public void ItReturnsCollectionOfSpeakers()
+{
+  // Arrange
+  var controller = new SpeakerController();
+
+  // Act
+  var result = controller.Search("Jos") as OkObjectResult;
+
+  // Assert
+  Assert.NotNull(result);
+  Assert.NotNull(result.Value); 
+  Assert.IsType<List<Speaker>>(result.Value);
+}
 }
