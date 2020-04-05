@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using SpeakerMeet.API.Controllers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SpeakerMeet.API.Tests
 {
@@ -32,7 +33,7 @@ namespace SpeakerMeet.API.Tests
 
         // Assert
         Assert.NotNull(result);
-//        Assert.IsType<OkObjectResult>(result);
+        Assert.IsType<OkObjectResult>(result);
         }
     }
 }

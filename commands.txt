@@ -167,5 +167,21 @@ Total tests: 3
     Skipped: 2
  Total time: 3.1879 Seconds
 
-25. 
+25. Let's confirm that the Search action result returns an OkObjectResult:
+  // Assert
+  Assert.NotNull(result);
+  Assert.IsType<OkObjectResult>(result); // <-- string to add
+And do not gorget to add directive using Microsoft.AspNetCore.Mvc;
 
+26. Test should succeed:
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.77]     SpeakerMeet.API.Tests.SpeakerControllerSearchTests.ItExists [SKIP]
+[xUnit.net 00:00:01.79]     SpeakerMeet.API.Tests.SpeakerControllerSearchTests.ItHasSearch [SKIP]
+  ! SpeakerMeet.API.Tests.SpeakerControllerSearchTests.ItExists [1ms]
+  ! SpeakerMeet.API.Tests.SpeakerControllerSearchTests.ItHasSearch [1ms]
+
+Test Run Successful.
+Total tests: 3
+     Passed: 1
+    Skipped: 2
+ Total time: 3.5754 Seconds
