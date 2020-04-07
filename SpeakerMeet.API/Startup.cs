@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.OpenApi.Models;
 
 namespace SpeakerMeet.API
 {
@@ -26,6 +28,14 @@ namespace SpeakerMeet.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // Зарегистрировать генератор Swagger и определить документ Swagger
+            // для сервиса Northwind
+            services.AddSwaggerGen(c =>
+            {
+            c.SwaggerDoc("v1", new OpenApiInfo  { Title = "SpeakerMeet Service API",
+            Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,6 +45,13 @@ namespace SpeakerMeet.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+            c.SwaggerEndpoint("/swagger/v1/swagger.json",
+            "SpeakerMeet Service API V1");
+            });
 
             app.UseHttpsRedirection();
 

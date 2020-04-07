@@ -9,6 +9,7 @@ namespace SpeakerMeet.API.Controllers
   public class SpeakerController : Controller
   {
     [Route("search")]
+    [HttpGet]
     public IActionResult Search(string searchString)
     {
       var hardCodedSpeakers = new List<Speaker>
