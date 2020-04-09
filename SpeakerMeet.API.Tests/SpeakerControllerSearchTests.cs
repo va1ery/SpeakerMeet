@@ -13,7 +13,7 @@ private readonly SpeakerController _controller;
 
 public SpeakerControllerSearchTests()
 {
-  _controller = new SpeakerController();
+  _controller = new SpeakerController()//;
 }       
 
 [Fact]
